@@ -6,4 +6,5 @@ COPY package-lock.json ./
 COPY ./ ./
 RUN npm i
 RUN npm run build
-CMD ["npm", "run", "serve"]
+ARG SERVE_PORT
+CMD ["npm", "run", "serve", "-l", SERVE_PORT]
